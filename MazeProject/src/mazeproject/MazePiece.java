@@ -1,5 +1,7 @@
-
+//copyright William Zulueta 2012
 package mazeproject;
+
+import java.awt.Color;
 
 public interface MazePiece
 {
@@ -11,6 +13,10 @@ public interface MazePiece
    public void setEastNeighbor(MazePiece mazePieceWMPE);
    public MazePiece getWestNeighbor();
    public void setWestNeighbor(MazePiece mazePieceWMPW);
+   public double getWidth();
+   public double getHeight();
+   public Color getColor();
+   
    
    
 }

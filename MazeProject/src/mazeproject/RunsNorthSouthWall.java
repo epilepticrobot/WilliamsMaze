@@ -1,5 +1,7 @@
-
+//copyright William Zulueta 2012
 package mazeproject;
+
+import java.awt.Color;
 
 public class RunsNorthSouthWall implements MazePiece
 {
@@ -54,6 +56,24 @@ public class RunsNorthSouthWall implements MazePiece
     public void setWestNeighbor(MazePiece mazePieceWMPW)
     {
         westNeighbor = mazePieceWMPW;
+    }
+    
+    @Override
+    public double getWidth()
+    {
+        return 3;
+    }
+
+    @Override
+    public double getHeight()
+    {
+        return 24;
+    }
+
+    @Override
+    public Color getColor()
+    {
+        return Color.BLACK;
     }
 
 }

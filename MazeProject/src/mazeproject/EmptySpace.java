@@ -1,11 +1,14 @@
+//copyright William Zulueta 2012
 package mazeproject;
+
+import java.awt.Color;
 
 public class EmptySpace implements MazePiece
 {
-    private MazePiece northNeighbor;
-    private MazePiece southNeighbor;
-    private MazePiece eastNeighbor;
-    private MazePiece westNeighbor;
+    private MazePiece eastNeighbor = new RunsNorthSouthWall();
+    private MazePiece westNeighbor = new RunsNorthSouthWall();
+    private MazePiece northNeighbor = new RunsEastWestWall();
+    private MazePiece southNeighbor = new RunsEastWestWall();
 
     @Override
     public MazePiece getNorthNeighbor()
@@ -53,5 +56,23 @@ public class EmptySpace implements MazePiece
     public void setWestNeighbor(MazePiece mazePieceWMPW)
     {
         westNeighbor = mazePieceWMPW;
+    }
+
+    @Override
+    public double getWidth()
+    {
+        return 21;
+    }
+
+    @Override
+    public double getHeight()
+    {
+        return 21;
+    }
+
+    @Override
+    public Color getColor()
+    {
+        return Color.magenta;
     }
 }
