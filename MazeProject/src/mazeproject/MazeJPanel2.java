@@ -23,19 +23,19 @@ public class MazeJPanel2 extends javax.swing.JPanel
     public void drawMaze(MazePiece currentPiece, double x, double y, Graphics2D g2)
     {
         //draw current rectangle |__|
-        System.out.println("0");
+        //System.out.println("0");
         if (!drawnPieces.contains(currentPiece))
         {
-            System.out.println("1");
+           // System.out.println("1");
             drawnPieces.add(currentPiece);
             Rectangle r = new Rectangle((int) x, (int) y, (int) currentPiece.getWidth(), (int) currentPiece.getHeight());
             g2.setPaint(currentPiece.getColor());
             g2.fill(r);
-            System.out.println("2");
+            //System.out.println("2");
             //stop when wall
             if (currentPiece instanceof EmptySpace)
             {
-                System.out.println("3");
+                //System.out.println("3");
                 //go east
                 drawMaze(currentPiece.getEastNeighbor(), x + currentPiece.getWidth(), y, g2);
                 //go north
@@ -44,9 +44,9 @@ public class MazeJPanel2 extends javax.swing.JPanel
                 drawMaze(currentPiece.getWestNeighbor(), x - currentPiece.getWestNeighbor().getWidth(), y, g2);
                 //south
                 drawMaze(currentPiece.getSouthNeighbor(), x, y + currentPiece.getHeight(), g2);
-                System.out.println("4");
+                //System.out.println("4");
             }
-            System.out.println("5");
+            //System.out.println("5");
         }
 
     }
