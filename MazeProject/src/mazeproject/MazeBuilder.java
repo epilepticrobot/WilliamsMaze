@@ -1,6 +1,9 @@
 //copyright William Zulueta 2012
 package mazeproject;
 
+import java.awt.Color;
+import java.util.Random;
+
 public class MazeBuilder
 {
     private MazePiece emptySpaceN = new EmptySpace(); //create empty space north
@@ -10,6 +13,15 @@ public class MazeBuilder
     private MazePiece emptySpaceNW = new EmptySpace();
     private MazePiece currentPiece;
     private MazePiece adjacentPiece = new EmptySpace();
+    private MazePiece randomPiece = new EmptySpace()
+    {
+        @Override
+        public Color getColor()
+        {
+            return Color.GREEN;
+        }
+    };
+    private Random r;
 
     public void simpleBuild()
     {
@@ -23,12 +35,11 @@ public class MazeBuilder
         currentPiece.setSouthNeighbor(new EmptySpace());
         adjacentPiece = currentPiece.getSouthNeighbor();
         adjacentPiece.setNorthNeighbor(currentPiece);
-        //
         currentPiece = adjacentPiece;
         currentPiece.setEastNeighbor(new EmptySpace());
         adjacentPiece = currentPiece.getEastNeighbor();
         adjacentPiece.setWestNeighbor(currentPiece);
-         currentPiece = adjacentPiece;
+        currentPiece = adjacentPiece;
         currentPiece.setEastNeighbor(new EmptySpace());
         adjacentPiece = currentPiece.getEastNeighbor();
         adjacentPiece.setWestNeighbor(currentPiece);
@@ -41,10 +52,52 @@ public class MazeBuilder
 
     }
 
+    public void randomBuild()
+    {
+        r = new Random();
+        float r2;
+        currentPiece = randomPiece;
+        for (int i = 0; i < 100; i++)
+        {
+            r2 = r.nextFloat();
+            System.out.println(r2);
+            if (r2 <= .25)
+            {
+
+                currentPiece.setNorthNeighbor(new EmptySpace());
+                adjacentPiece = currentPiece.getNorthNeighbor();
+                adjacentPiece.setSouthNeighbor(currentPiece);
+            }
+            if (r2 > .25 && r2 < .55)
+            {
+
+                currentPiece.setEastNeighbor(new EmptySpace());
+                adjacentPiece = currentPiece.getEastNeighbor();
+                adjacentPiece.setWestNeighbor(currentPiece);
+            }
+            if (r2 >= .55 && r2 <= .75)
+            {
+
+                currentPiece.setSouthNeighbor(new EmptySpace());
+                adjacentPiece = currentPiece.getSouthNeighbor();
+                adjacentPiece.setNorthNeighbor(currentPiece);
+
+            }
+            if (r2 > .75)
+            {
+
+                currentPiece.setWestNeighbor(new EmptySpace());
+                adjacentPiece = currentPiece.getWestNeighbor();
+                adjacentPiece.setEastNeighbor(currentPiece);
+            }
+            currentPiece = adjacentPiece;
+        }
+    }
+
     public MazePiece startingMazePiece()
     {
-        simpleBuild();
-        return emptySpaceS;
+        randomBuild();
+        return randomPiece;
 
     }
 }

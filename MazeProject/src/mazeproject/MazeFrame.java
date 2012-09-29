@@ -1,3 +1,8 @@
+
+
+
+
+
 //copyright William Zulueta 2012
 package mazeproject;
 public class MazeFrame extends javax.swing.JFrame
@@ -23,7 +28,7 @@ public class MazeFrame extends javax.swing.JFrame
         jProgressBar1 = new javax.swing.JProgressBar();
         jSpinner2 = new javax.swing.JSpinner();
         jScrollBar2 = new javax.swing.JScrollBar();
-        mazeJPanel23 = new mazeproject.MazeJPanel2();
+        mazeJPanel21 = new mazeproject.MazeJPanel2();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -35,26 +40,32 @@ public class MazeFrame extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        org.jdesktop.layout.GroupLayout mazeJPanel23Layout = new org.jdesktop.layout.GroupLayout(mazeJPanel23);
-        mazeJPanel23.setLayout(mazeJPanel23Layout);
-        mazeJPanel23Layout.setHorizontalGroup(
-            mazeJPanel23Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 415, Short.MAX_VALUE)
+        mazeJPanel21.setPreferredSize(new java.awt.Dimension(1000, 800));
+
+        org.jdesktop.layout.GroupLayout mazeJPanel21Layout = new org.jdesktop.layout.GroupLayout(mazeJPanel21);
+        mazeJPanel21.setLayout(mazeJPanel21Layout);
+        mazeJPanel21Layout.setHorizontalGroup(
+            mazeJPanel21Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 1142, Short.MAX_VALUE)
         );
-        mazeJPanel23Layout.setVerticalGroup(
-            mazeJPanel23Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 296, Short.MAX_VALUE)
+        mazeJPanel21Layout.setVerticalGroup(
+            mazeJPanel21Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 684, Short.MAX_VALUE)
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, mazeJPanel23, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .add(mazeJPanel21, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1142, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(mazeJPanel23, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .add(mazeJPanel21, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -111,6 +122,6 @@ public class MazeFrame extends javax.swing.JFrame
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextArea jTextArea1;
-    private mazeproject.MazeJPanel2 mazeJPanel23;
+    private mazeproject.MazeJPanel2 mazeJPanel21;
     // End of variables declaration//GEN-END:variables
 }
