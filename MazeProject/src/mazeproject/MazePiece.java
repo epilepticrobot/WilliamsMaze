@@ -16,6 +16,8 @@ public interface MazePiece
    public double getWidth();
    public double getHeight();
    public Color getColor();
+   public void changeColor(Color c);
+  
    
    
    

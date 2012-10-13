@@ -2,6 +2,7 @@
 package mazeproject;
 
 import java.awt.Color;
+import java.awt.Graphics;
 
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -86,22 +87,28 @@ public class MazeJPanel2 extends javax.swing.JPanel
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    @Override
+    public void paint(Graphics g)
+    {
+        drawnPieces.clear();
+        drawMaze(startingPiece, centerX, centerY, (Graphics2D) g);
+    }
     private void formMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_formMouseClicked
     {//GEN-HEADEREND:event_formMouseClicked
-        drawnPieces.clear();
-        drawMaze(startingPiece, centerX, centerY, (Graphics2D) this.getParent().getGraphics());
+//        drawnPieces.clear();
+//        drawMaze(startingPiece, centerX, centerY, (Graphics2D) this.getParent().getGraphics());
     }//GEN-LAST:event_formMouseClicked
 
     private void formComponentResized(java.awt.event.ComponentEvent evt)//GEN-FIRST:event_formComponentResized
     {//GEN-HEADEREND:event_formComponentResized
-        drawnPieces.clear();
-        drawMaze(startingPiece, centerX, centerY, (Graphics2D) this.getParent().getGraphics());
+//        drawnPieces.clear();
+//        drawMaze(startingPiece, centerX, centerY, (Graphics2D) this.getParent().getGraphics());
     }//GEN-LAST:event_formComponentResized
 
     private void formComponentShown(java.awt.event.ComponentEvent evt)//GEN-FIRST:event_formComponentShown
     {//GEN-HEADEREND:event_formComponentShown
-        drawnPieces.clear();
-        drawMaze(startingPiece, centerX, centerY, (Graphics2D) this.getParent().getGraphics());
+//        drawnPieces.clear();
+//        drawMaze(startingPiece, centerX, centerY, (Graphics2D) this.getParent().getGraphics());
     }//GEN-LAST:event_formComponentShown
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

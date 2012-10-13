@@ -77,4 +77,9 @@ public class RunsEastWestWall implements MazePiece
         return Color.BLACK;
     }
 
+    @Override
+    public void changeColor()
+    {
+    }
+
 }

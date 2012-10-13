@@ -1,4 +1,5 @@
-//copyright William Zulueta 2012
+//copyright William Zulueta 2012|
+
 package mazeproject;
 
 import java.awt.Color;
@@ -24,6 +25,8 @@ public class MazeBuilder
         }
     };
     private Random r;
+    private EmptySpace northMostSpace;
+    private EmptySpace southMostSpace;
 
     public void simpleBuild()
     {
@@ -61,8 +64,10 @@ public class MazeBuilder
         r = new Random();
         float r2;
         currentPiece = randomPiece;
-        for (int i = 0; i < 638; i++)
+        mazePieceStore.put(getXYString(x, y), (EmptySpace) currentPiece);
+        for (int i = 0; i < 88; i++)
         {
+           
             r2 = r.nextFloat();
             //System.out.println(r2);
             if (r2 <= .25)
@@ -72,6 +77,8 @@ public class MazeBuilder
                 adjacentPiece = currentPiece.getNorthNeighbor();
                 System.out.println(adjacentPiece + "gotHere");
                 adjacentPiece.setSouthNeighbor(currentPiece);
+                northMostSpace = (EmptySpace) adjacentPiece;
+                
             }
             if (r2 > .25 && r2 < .55)
             {
@@ -88,6 +95,7 @@ public class MazeBuilder
                 adjacentPiece = currentPiece.getSouthNeighbor();
                 System.out.println(adjacentPiece + "gotHere");
                 adjacentPiece.setNorthNeighbor(currentPiece);
+                southMostSpace = (EmptySpace) adjacentPiece;
 
             }
             if (r2 > .75)
@@ -99,6 +107,7 @@ public class MazeBuilder
                 adjacentPiece.setEastNeighbor(currentPiece);
             }
             currentPiece = adjacentPiece;
+            
         }
     }
 
@@ -109,7 +118,7 @@ public class MazeBuilder
         {
             System.out.println("get");
             // return mazePieceStore.get(x + "," + y);
-            EmptySpace eS = mazePieceStore.get(getXYString(x, y));
+                EmptySpace eS = mazePieceStore.get(getXYString(x, y));
             System.out.println(eS);
             System.out.println("hello");
             return eS;

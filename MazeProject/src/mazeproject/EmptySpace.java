@@ -75,4 +75,10 @@ public class EmptySpace implements MazePiece
     {
         return Color.magenta;
     }
+
+    @Override
+    public void changeColor(Color c)
+    {
+        return c.green;
+    }
 }
